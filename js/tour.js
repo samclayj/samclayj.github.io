@@ -9,8 +9,8 @@ let TypeSimulation = function(el, toRotate, period) {
 };
 
 TypeSimulation.prototype.tick = function() {
-    var i = this.loopNum;
-    var fullTxt = this.toRotate[i];
+    let i = this.loopNum;
+    let fullTxt = this.toRotate[i];
 
     if (this.isDeleting) {
         this.txt = fullTxt.substring(0, this.txt.length - 1);
@@ -20,8 +20,7 @@ TypeSimulation.prototype.tick = function() {
 
     this.element.innerHTML = '<span class="wrap">' + this.txt + '</span>';
 
-    var that = this;
-    var delta = 200 - Math.random() * 100;
+    let delta = 200 - Math.random() * 100;
 
     if (this.isDeleting) { delta /= 2; }
 
@@ -34,26 +33,26 @@ TypeSimulation.prototype.tick = function() {
         delta = 500;
     }
 
+    let that = this;
     if (this.loopNum < this.toRotate.length) {
-        // that.isDeleting = this.loopNum == this.toRotate.length;
-        setTimeout(function() {
+        setTimeout(() => {
             that.tick();
         }, delta);
     }
 };
 
 window.onload = function() {
-    var elements = document.getElementsByClassName('typewrite');
-    for (var i = 0; i < elements.length; i++) {
-        var toRotate = elements[i].dataset.text;
-        var period = elements[i].dataset.interval;
+    let elements = document.getElementsByClassName('typewrite');
+    for (let i = 0; i < elements.length; i++) {
+        let toRotate = elements[i].dataset.text;
+        let period = elements[i].dataset.interval;
         if (toRotate) {
           new TypeSimulation(elements[i], JSON.parse(toRotate), period);
         }
     }
 
     // INJECT CSS
-    var css = document.createElement("style");
+    let css = document.createElement("style");
     css.type = "text/css";
     css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
     document.body.appendChild(css);

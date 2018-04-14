@@ -1,3 +1,6 @@
+/*
+ * Default Screen Size (Large)
+ */
 body {
     background-color: var(--color-blue-highlight);
 }
@@ -6,46 +9,65 @@ body {
   max-width: 960px;
 }
 
-
 .side-info {
     background-color: var(--color-dark-gray);
-    height: 280px;
+    min-height: 100vh;
 }
 
-@media (min-width: 989px) {
-    .side-info {
-        min-height: 100vh;
-    }
+#header-toggle {
+    display: none;
 }
 
 .main-content {
     background-color: var(--color-blue-highlight);
-    padding: 0px;
+    padding: 40px;
     min-height: 100vh;
 }
 
-@media (min-width: 620px) {
+#smallscreen-info-pane {
+    display: none;
+}
+
+/*
+ * Less than 989px behavior.
+ */
+@media (max-width: 989px) {
+    .side-info {
+        min-height: 0px;
+        height: 280px;
+    }
+
+    #header-toggle {
+        display: block;
+        color: var(--color-blue-highlight);
+    }
+}
+
+/*
+ * Between 989px and 620px.
+ */
+@media (max-width: 989px) and (min-width: 620px) {
+    #smallscreen-info-pane[show="true"] {
+        margin-bottom: 30px;
+        display: block;
+    }
+}
+
+/*
+ * Small Screen behavior, less than 620px.
+ */
+@media (max-width: 620px) {
     .main-content {
-        padding: 40px;
+        padding: 0px;
+    }
+
+    #smallscreen-info-pane[show="true"] {
+        margin-bottom: 0px;
+        display: block;
     }
 }
 
 /*
  * Extra utilities
  */
-
-.flex-equal > * {
-  -ms-flex: 1;
-  -webkit-box-flex: 1;
-  flex: 1;
-}
-
-@media (min-width: 768px) {
-  .flex-md-equal > * {
-    -ms-flex: 1;
-    -webkit-box-flex: 1;
-    flex: 1;
-  }
-}
-
 .overflow-hidden { overflow: hidden; }

@@ -26,7 +26,11 @@
         <div class="col-lg-3 side-info">
            <div class="text-center overflow-hidden">
              <div class="my-3 p-3">
-               <h2 class="display-5" style="color:white;">Another headline</h2>
+               <h2 id="header-text"
+                   data-interval="2000"
+                   data-text='["Oh.....", "Hello there."]'
+                   class="display-5"
+                   style="color:white;">Another headline</h2>
                <p class="lead" style="color:white;">And an even wittier subheading.</p>
                <div id="header-toggle" class="btn btn-default" aria-label="Left Align">
                    <i class="fas fa-asterisk fa-2x"></i>
@@ -66,6 +70,7 @@
     <script>
         window.onload = function() {
             registerEvents();
+            startTyping();
         };
     </script>
   </body>

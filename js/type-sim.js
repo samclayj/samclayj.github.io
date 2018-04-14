@@ -41,19 +41,22 @@ TypeSimulation.prototype.tick = function() {
     }
 };
 
-// window.onload = function() {
-//     let elements = document.getElementsByClassName('typewrite');
-//     for (let i = 0; i < elements.length; i++) {
-//         let toRotate = elements[i].dataset.text;
-//         let period = elements[i].dataset.interval;
-//         if (toRotate) {
-//           new TypeSimulation(elements[i], JSON.parse(toRotate), period);
-//         }
-//     }
-//
-//     // INJECT CSS
-//     let css = document.createElement("style");
-//     css.type = "text/css";
-//     css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-//     document.body.appendChild(css);
-// };
+let startTyping = function() {
+    let ids = ["header-text"];
+
+    for (id of ids) {
+        let element = document.getElementById(id);
+        let toRotate = element.dataset.text;
+        let period = element.dataset.interval;
+        if (toRotate) {
+          new TypeSimulation(element, JSON.parse(toRotate), period);
+        }
+
+        // INJECT CSS
+        let css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = "#" + id + " > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    }
+}
+

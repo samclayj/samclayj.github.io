@@ -1,8 +1,11 @@
-let TypeSimulation = function(el, toRotate, period) {
-    this.toRotate = toRotate;
+let TypeSimulation = function(el, typeText, lead, end, period) {
+    this.typeText = shuffleArray(typeText);
+    this.typeText.push(end);
+
     this.element = el;
     this.loopNum = 0;
     this.period = parseInt(period, 10) || 2000;
+    this.lead = lead;
     this.txt = '';
     this.tick();
     this.isDeleting = false;
@@ -10,7 +13,7 @@ let TypeSimulation = function(el, toRotate, period) {
 
 TypeSimulation.prototype.tick = function() {
     let i = this.loopNum;
-    let fullTxt = this.toRotate[i];
+    let fullTxt = this.lead + this.typeText[i];
 
     if (this.isDeleting) {
         this.txt = fullTxt.substring(0, this.txt.length - 1);
@@ -26,7 +29,7 @@ TypeSimulation.prototype.tick = function() {
 
     if (!this.isDeleting && this.txt === fullTxt) {
         delta = this.period;
-        this.isDeleting = this.loopNum != this.toRotate.length - 1;
+        this.isDeleting = this.loopNum != this.typeText.length - 1;
     } else if (this.isDeleting && this.txt === '') {
         this.isDeleting = false;
         this.loopNum++;
@@ -34,7 +37,7 @@ TypeSimulation.prototype.tick = function() {
     }
 
     let that = this;
-    if (this.loopNum < this.toRotate.length) {
+    if (this.loopNum < this.typeText.length) {
         setTimeout(() => {
             that.tick();
         }, delta);
@@ -46,10 +49,12 @@ let startTyping = function() {
 
     for (id of ids) {
         let element = document.getElementById(id);
-        let toRotate = element.dataset.text;
+        let typeText = element.dataset.text;
         let period = element.dataset.interval;
-        if (toRotate) {
-          new TypeSimulation(element, JSON.parse(toRotate), period);
+        let lead = element.dataset.lead;
+        let end = element.dataset.end;
+        if (typeText) {
+          new TypeSimulation(element, JSON.parse(typeText), lead, end, period);
         }
 
         // INJECT CSS
@@ -60,3 +65,10 @@ let startTyping = function() {
     }
 }
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}

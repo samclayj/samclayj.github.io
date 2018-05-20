@@ -18,6 +18,19 @@ body {
     display: none;
 }
 
+#header-toggle-icon {
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    color: var(--color-blue-highlight);
+  }
+  100% {
+    color: white;
+  }
+}
+
 .main-content {
     background-color: var(--color-blue-highlight);
     padding: 40px;

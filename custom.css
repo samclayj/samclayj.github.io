@@ -52,11 +52,18 @@ body {
 }
 
 .connect-icon-container {
-    display: flex;
     margin: auto;
     max-width: 150px;
     flex-direction: row;
     align-content: space-between;
+}
+
+.connect-icon-container-desktop {
+    display: flex;
+}
+
+.connect-icon-container-mobile {
+    display: none;
 }
 
 .connect-icon {
@@ -81,6 +88,14 @@ body {
 
     .profile-picture {
         display: none;
+    }
+
+    .connect-icon-container-desktop {
+        display: none;
+    }
+
+    .connect-icon-container-mobile {
+        display: flex;
     }
 }
 

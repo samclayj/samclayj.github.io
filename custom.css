@@ -81,12 +81,14 @@ body {
 }
 
 hr {
-    border-width: 3px;
+    width: 90%;
+    margin: auto;
+    border-width: 1.5px;
     background-color: var(--color-dark-gray);
 }
 
 /*
- * Less than 991px behavior.
+ * Less than 992px behavior.
  */
 @media (max-width: 991px) {
     .side-info {

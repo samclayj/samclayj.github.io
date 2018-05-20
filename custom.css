@@ -51,6 +51,20 @@ body {
     user-select: none;
 }
 
+.connect-icon-container {
+    display: flex;
+    margin: auto;
+    max-width: 150px;
+    flex-direction: row;
+    align-content: space-between;
+}
+
+.connect-icon {
+    display: flex;
+    margin: auto;
+    color: var(--color-blue-highlight);
+}
+
 /*
  * Less than 989px behavior.
  */

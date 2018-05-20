@@ -32,8 +32,7 @@ body {
     color: white;
 }
 
-.profile-picture {
-}
+.profile-picture { }
 
 .mask-element {
     width: 150px;
@@ -72,10 +71,24 @@ body {
     color: var(--color-blue-highlight);
 }
 
+.bio-text {
+    max-width: 350px;
+    margin: auto;
+    margin-top: 15px;
+    line-height: 1.5;
+    color: white;
+    font-size: 14px;
+}
+
+hr {
+    border-width: 3px;
+    background-color: var(--color-dark-gray);
+}
+
 /*
- * Less than 989px behavior.
+ * Less than 991px behavior.
  */
-@media (max-width: 989px) {
+@media (max-width: 991px) {
     .side-info {
         min-height: 0px;
         height: 280px;
@@ -95,7 +108,21 @@ body {
     }
 
     .connect-icon-container-mobile {
+        margin-top: 10px;
+        margin-bottom: 10px;
         display: flex;
+    }
+
+    .bio-text {
+        display: none;
+    }
+
+    .bio-text-mobile {
+        padding: 20px;
+        color: var(--color-dark-gray);
+        text-align: left;
+        line-height: 1.5;
+        font-size: 14px;
     }
 }
 

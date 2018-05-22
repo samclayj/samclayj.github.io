@@ -18,7 +18,7 @@ body {
     display: none;
 }
 
-#header-toggle-icon {
+#header-toggle-icon[pulse="true"] {
     animation: pulse 1s infinite;
     animation-direction: alternate;
 }

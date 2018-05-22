@@ -1,17 +1,16 @@
 let appState = {
-    togglePressed: false,
+    togglePulse: true,
     headerCollapsed: true,
 }
 
 let headerCollapse = function() {
     // Stop pulsating since the toggle has been acknowledged.
-    appState.togglePressed = true;
+    appState.togglePulse = false;
     let headerToggle = document.getElementById("header-toggle-icon");
-    headerToggle.setAttribute("pressed", appState.togglePressed);
+    headerToggle.setAttribute("pulse", appState.togglePulse);
 
     let header = document.getElementById("smallscreen-info-pane");
     header.setAttribute("show", appState.headerCollapsed);
-    header.setAttribute("pressed", appState.headerCollapsed);
     appState.headerCollapsed = !appState.headerCollapsed;
 }
 

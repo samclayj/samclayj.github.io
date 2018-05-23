@@ -48,7 +48,7 @@ body {
 
 .profile-picture { }
 
-.mask-element {
+.mask-profile {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -163,6 +163,10 @@ hr {
 
     #smallscreen-info-pane[show="true"] {
         margin-bottom: 0px;
+        border: 0px;
+        border-bottom: 1px;
+        border-style: solid;
+        border-color: var(--color-dark-gray);
         display: block;
     }
 }

@@ -35,92 +35,124 @@
 <div class="container-fluid" style="">
 	<div class="row">
 
-	  <div class="col-lg-3 side-info">
-		 <div class="text-center overflow-hidden">
-		   <div class="my-3 p-3 user-select-none">
-			 <h2 id="header-text"
-				 data-interval="2000"
-				 data-lead = "I Love to "
-				 data-end = "Solve Problems."
-				 data-text='["Program.", "Read.", "Write.", "Learn.", "Run.", "Design."]'
-				 class="display-5 white-text" ></h2>
+		<div class="col-lg-3 side-info">
+			<div class="text-center overflow-hidden">
+				<div class="my-3 p-3 user-select-none">
+					<h2 id="header-text" data-interval="2000" data-lead="I Love to " data-end="Solve Problems."
+						data-text='["Program.", "Read.", "Write.", "Learn.", "Run.", "Design."]'
+						class="display-5 white-text"></h2>
 
-			 <div class='mx-auto my-3 profile-picture'>
-				 <img src="{{ url_for('static', filename='assets/images/profile.jpg') }}" alt="" class="mask-profile">
-			 </div>
+					<div class='mx-auto my-3 profile-picture'>
+						<img src="{{ url_for('static', filename='assets/images/profile.jpg') }}" alt=""
+							class="mask-profile">
+					</div>
 
-			 <p class="lead white-text">Sam Jentsch</p>
-			 <div id="header-toggle" class="btn btn-default" aria-label="Left Align">
-				 <i id='header-toggle-icon' pulse="true" class="fas fa-asterisk fa-2x"></i>
-			 </div>
+					<p class="lead white-text">Sam Jentsch</p>
+					<div id="header-toggle" class="btn btn-default" aria-label="Left Align">
+						<i id='header-toggle-icon' pulse="true" class="fas fa-asterisk fa-2x"></i>
+					</div>
 
-			 <div class='connect-icon-container connect-icon-container-desktop'>
-				 <!-- {% include 'components/icon-links.html' %} -->
-			 </div>
+					<div class='connect-icon-container connect-icon-container-desktop'>
+						<!-- {% include 'components/icon-links.html' %} -->
+						<div class='connect-icon'>
+							<a href='https://www.linkedin.com/in/sam-jentsch/'><i class="fab fa-linkedin-in"></i></a>
+						</div>
+						<div class='connect-icon'>
+							<a href='https://github.com/samclayj'><i class="fab fa-github"></i></a>
+						</div>
+						<div class='connect-icon'>
+							<a href='https://www.instagram.com/samclayj/'><i class="fab fa-instagram"></i></a>
+						</div>
+						<div class='connect-icon'>
+							<a href=""><i class="fas fa-file-alt"></i></a>
+						</div>
+					</div>
 
-			 <div class='bio-text'>
-				 <!-- {% include 'components/biotext.html' %} -->
-			 </div>
-		   </div>
-		 </div>
-	  </div>
+					<div class='bio-text'>
+						<!-- {% include 'components/biotext.html' %} -->
+						<p> Growing up, I always loved to program. It wasn't until later that I learned that problem
+							solving is my true passion. This realization led to my double major in computer science and
+							math, two fields that allow for my favorite hobby and passion to become my career. I love to
+							learn, and one of my favorite things about computer science and technology is how rapidly it
+							changes. There's always a new aspect to explore or implement.
+						</p>
 
-	  <div class="col-lg-9 main-content">
-
-		<!-- Mobile header -->
-		<div id="smallscreen-info-pane" class="bg-primary text-center overflow-hidden">
-		  <div class="my-3 py-3">
-			  <h2 class="display-5">About me.</h2>
-			  <div class='mx-auto my-3'>
-				  <img src="{{ url_for('static', filename='assets/images/profile.jpg') }}" alt="" class="mask-profile">
-			  </div>
-			  <div class='connect-icon-container connect-icon-container-mobile'>
-				 <!-- {% include 'components/icon-links.html' %} -->
-			 </div>
-			<p class="lead">Something witty should go here eventually.</p>
-			<hr>
-			 <div class='bio-text-mobile'>
-				 <!-- {% include 'components/biotext.html' %} -->
-			 </div>
-		  </div>
+						<p>Some of my greatest accomplishments include winning an innovation contest at General
+							Electric, developing a new STEM section of a freshman outreach program at my university,
+							winning the Outstanding Student Award at NASA, and beginning work at Google.
+						</p>
+						<p>My love of learning extends to teaching, and my future goals ultimately include a PH.D. in
+							computer science and teaching at the university level.
+						</p>
+					</div>
+				</div>
+			</div>
 		</div>
 
-		{% block card %}{% endblock %}
-	  </div>
+		<div class="col-lg-9 main-content">
+
+			<!-- Mobile header -->
+			<div id="smallscreen-info-pane" class="bg-primary text-center overflow-hidden">
+				<div class="my-3 py-3">
+					<h2 class="display-5">About me.</h2>
+					<div class='mx-auto my-3'>
+						<img src="{{ url_for('static', filename='assets/images/profile.jpg') }}" alt=""
+							class="mask-profile">
+					</div>
+					<div class='connect-icon-container connect-icon-container-mobile'>
+						<!-- {% include 'components/icon-links.html' %} -->
+					</div>
+					<p class="lead">Something witty should go here eventually.</p>
+					<hr>
+					<div class='bio-text-mobile'>
+						<!-- {% include 'components/biotext.html' %} -->
+					</div>
+				</div>
+			</div>
+
+			<!-- {% block card %}{% endblock %} -->
+		</div>
 
 	</div>
-  </div>
+</div>
 
-  <!-- Bootstrap core JavaScript
+<!-- Bootstrap core JavaScript
   ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js" crossorigin="anonymous"></script>
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"
+	crossorigin="anonymous"></script>
 
-  <script src="{{ url_for('static', filename='js/holder.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/site.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/type-sim.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/scrollin.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/chart-helper.js') }}"></script>
-  <script>
-	  window.onload = function() {
-		  registerEvents();
-		  startTyping();
+<script src="{{ url_for('static', filename='js/holder.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/site.js') }}"></script>
+<script src="{{ url_for('static', filename='js/type-sim.js') }}"></script>
+<script src="{{ url_for('static', filename='js/scrollin.js') }}"></script>
+<script src="{{ url_for('static', filename='js/chart-helper.js') }}"></script>
+<script>
+	window.onload = function () {
+		registerEvents();
+		startTyping();
 
-		  const pageTop = $(document).scrollTop();
-		  const pageBottom = pageTop + $(window).height();
-		  ChartHelper.chartAnimate(pageTop, pageBottom);
-		  ScrollIn.scrollInBehavior(pageTop, pageBottom);
-	  };
-	  $(document).on("scroll", function () {
-		  const pageTop = $(document).scrollTop();
-		  const pageBottom = pageTop + $(window).height();
-		  ChartHelper.chartAnimate(pageTop, pageBottom);
-		  ScrollIn.scrollInBehavior(pageTop, pageBottom);
-	  });
-  </script>
+		const pageTop = $(document).scrollTop();
+		const pageBottom = pageTop + $(window).height();
+		ChartHelper.chartAnimate(pageTop, pageBottom);
+		ScrollIn.scrollInBehavior(pageTop, pageBottom);
+	};
+	$(document).on("scroll", function () {
+		const pageTop = $(document).scrollTop();
+		const pageBottom = pageTop + $(window).height();
+		ChartHelper.chartAnimate(pageTop, pageBottom);
+		ScrollIn.scrollInBehavior(pageTop, pageBottom);
+	});
+</script>
 </body>
 
 </html>

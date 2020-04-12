@@ -1,3 +1,4 @@
+
 let appState = {
     togglePulse: true,
     headerCollapsed: true,
